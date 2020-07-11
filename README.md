@@ -1,14 +1,21 @@
-# Monokai vim theme
+# Monokai
 
 ### Install with Vim-Plug
 
 ```VimL
-" vim-plug
+" ~/.vimrc
+
+" Initialize Vim-Plug
 call plug#begin('~/.vim/plugged')
-Plug 'walston/monokai.vim'
-" ...
+
+" Include theme as a plugin
+Plug 'walston/monokai-vim'
+
+" Close Vim-Plug
 call plug#end()
 ```
+
+Quickly install all plugins
 
 ```sh
 vim +PlugInstall +qall
