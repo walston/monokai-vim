@@ -8,30 +8,39 @@ if exists("syntax_on")
   syntax reset
 endif
 
-set t_Co=256
 let g:colors_name = "monokai"
 
 " Palette ------------------------------------------------------------------ {{{
-let s:none      = "NONE"
-let s:red       = "#f92672"
-let s:orange    = "#fd9714"
-let s:amber     = "#d08222" " madeup
-let s:yellow    = "#e6db74"
-let s:green     = "#a6e22e"
-let s:turquoise = "#30d5c8" " madeup
-let s:cyan      = "#a1efe4"
-let s:blue      = "#66d9ef"
-let s:magenta   = "#fd5ff0"
-let s:rose      = "#fc9d9a" " madeup
-let s:bg0       = "#272822"
-let s:bg1       = "#3e3d32"
-let s:bg2       = "#64635a"
-let s:fg0       = "#f8f8f2"
-let s:fg1       = "#cfcfc2"
-let s:fg2       = "#909087"
+let s:none      = {'hex':"NONE",'cterm':"NONE"}
+
+let s:bg0       = {'hex':"#272822",'cterm':00}
+let s:bg1       = {'hex':"#3e3d32",'cterm':08}
+let s:bg2       = {'hex':"#64635a",'cterm':08}
+
+let s:red       = {'hex':"#f92672",'cterm':01}
+let s:orange    = {'hex':"#fd9714",'cterm':09}
+
+let s:green     = {'hex':"#a6e22e",'cterm':02}
+let s:turquoise = {'hex':"#30d5c8",'cterm':10} " madeup
+
+let s:amber     = {'hex':"#e69f66",'cterm':03} " light-orange
+let s:yellow    = {'hex':"#e6db74",'cterm':11}
+
+let s:blue      = {'hex':"#66d9ef",'cterm':04}
+let s:blue      = {'hex':"#6a14a91",'cterm':04}
+
+let s:magenta   = {'hex':"#fd5ff0",'cterm':05}
+let s:rose      = {'hex':"#fc9d9a",'cterm':13} " madeup
+
+let s:cyan      = {'hex':"#a1efe4",'cterm':06}
+
+let s:fg0       = {'hex':"#f8f8f2",'cterm':07}
+let s:fg1       = {'hex':"#cfcfc2",'cterm':15}
+let s:fg2       = {'hex':"#75715e",'cterm':15} " comment
 
 let s:palette = {}
 
+" Expand this to support { 'gui'=HEX, 'cterm'=256 }
 let s:palette.bg        = s:bg0
 let s:palette.comment   = s:fg2
 let s:palette.markup    = s:amber
@@ -54,7 +63,8 @@ let s:palette.selection = s:fg2
 
 function! s:build_prim(hi_elem, field)
   let l:vname = "s:" . a:hi_elem . "_" . a:field
-  let l:gui_assign = "gui".a:hi_elem."=".s:palette[a:field]
+  let l:gui_assign = "gui".a:hi_elem."=".s:palette[a:field]["hex"]
+  let l:cterm_assign = "cterm".a:hi_elem."=".s:palette[a:field]["cterm"]
   exe "let " . l:vname . " = ' " . l:gui_assign . "'"
 endfunction
 
@@ -101,10 +111,12 @@ exe "hi! Comment"       .s:fg_comment     .s:bg_none        .s:fmt_none
 exe "hi! Function"      .s:fg_function    .s:bg_none        .s:fmt_none
 " string, regexp
 exe "hi! String"        .s:fg_string      .s:bg_none        .s:fmt_none
+" keyword
+exe "hi! Keyword"       .s:fg_keyword     .s:bg_none        .s:fmt_none
+exe "hi! Statement"     .s:fg_keyword     .s:bg_none        .s:fmt_none
 " markup
 " constant
 " tag
-" keyword
 " error
 " accent
 " panel
