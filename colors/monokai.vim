@@ -27,7 +27,6 @@ let s:amber     = {'hex':"#e69f66",'cterm':03} " light-orange
 let s:yellow    = {'hex':"#e6db74",'cterm':11}
 
 let s:blue      = {'hex':"#66d9ef",'cterm':04}
-let s:blue      = {'hex':"#6a14a91",'cterm':04}
 
 let s:magenta   = {'hex':"#fd5ff0",'cterm':05}
 let s:rose      = {'hex':"#fc9d9a",'cterm':13} " madeup
