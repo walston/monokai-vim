@@ -41,7 +41,6 @@ let s:palette = {}
 
 " Expand this to support { 'gui'=HEX, 'cterm'=256 }
 let s:palette.bg        = s:bg0
-let s:palette.popout    = s:bg1
 let s:palette.comment   = s:fg2
 let s:palette.markup    = s:amber
 let s:palette.constant  = s:yellow
@@ -146,8 +145,8 @@ exe "hi! MatchParen"      .s:fg_fg          .s:bg_bg          .s:fmt_undr
 exe "hi! ModeMsg"         .s:fg_string      .s:bg_none        .s:fmt_none
 exe "hi! MoreMsg"         .s:fg_string      .s:bg_none        .s:fmt_none
 exe "hi! NonText"         .s:fg_guide       .s:bg_none        .s:fmt_none
-exe "hi! Pmenu"           .s:fg_fg_idle     .s:bg_popout      .s:fmt_none
-exe "hi! PmenuSel"        .s:fg_fg          .s:bg_popout      .s:fmt_revr
+exe "hi! Pmenu"           .s:fg_fg_idle     .s:bg_guide       .s:fmt_none
+exe "hi! PmenuSel"        .s:fg_fg          .s:bg_guide       .s:fmt_revr
 "   PmenuSbar"
 "   PmenuThumb"
 exe "hi! Question"        .s:fg_string      .s:bg_none        .s:fmt_none
@@ -168,7 +167,9 @@ exe "hi! Visual"          .s:fg_none        .s:bg_selection   .s:fmt_none
 "   VisualNos"
 exe "hi! WarningMsg"      .s:fg_error       .s:bg_none        .s:fmt_none
 "   Coc
-exe "hi! CocInfoFloat"    .s:fg_info        .s:bg_popout      .s:fmt_none
-exe "hi! CocWarningFloat" .s:fg_markup      .s:bg_popout      .s:fmt_none
-exe "hi! CocErrorFloat"   .s:fg_special     .s:bg_popout      .s:fmt_none
+exe "hi! CocInfoFloat"    .s:fg_info        .s:bg_guide       .s:fmt_none
+exe "hi! CocWarningFloat" .s:fg_markup      .s:bg_guide       .s:fmt_none
+exe "hi! CocErrorFloat"   .s:fg_special     .s:bg_guide       .s:fmt_none
+exe "hi! CocWarningHighlight" .s:fg_bg      .s:bg_accent      .s:fmt_undr
+exe "hi! CocErrorHighlight" .s:fg_bg        .s:bg_error       .s:fmt_undr
 " }}}
