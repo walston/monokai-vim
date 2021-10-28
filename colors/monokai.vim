@@ -102,18 +102,18 @@ exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE"
 
 " Vim Highlighting: (see :help highlight-groups) --------------------------- {{{
 
-exe "hi! Normal"          .s:fg_fg          .s:bg_bg          .s:fmt_none
-exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! Normal"              .s:fg_fg          .s:bg_bg          .s:fmt_none
+exe "hi! ColorColumn"         .s:fg_none        .s:bg_line        .s:fmt_none
 " comment
-exe "hi! PreProc"         .s:fg_tag         .s:bg_none        .s:fmt_none
-exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
+exe "hi! PreProc"             .s:fg_tag         .s:bg_none        .s:fmt_none
+exe "hi! Comment"             .s:fg_comment     .s:bg_none        .s:fmt_none
 " function
-exe "hi! Function"        .s:fg_function    .s:bg_none        .s:fmt_none
+exe "hi! Function"            .s:fg_function    .s:bg_none        .s:fmt_none
 " string, regexp
-exe "hi! String"          .s:fg_string      .s:bg_none        .s:fmt_none
+exe "hi! String"              .s:fg_string      .s:bg_none        .s:fmt_none
 " keyword
-exe "hi! Keyword"         .s:fg_keyword     .s:bg_none        .s:fmt_none
-exe "hi! Statement"       .s:fg_keyword     .s:bg_none        .s:fmt_none
+exe "hi! Keyword"             .s:fg_keyword     .s:bg_none        .s:fmt_none
+exe "hi! Statement"           .s:fg_keyword     .s:bg_none        .s:fmt_none
 " markup
 " constant
 " tag
@@ -127,49 +127,53 @@ exe "hi! Statement"       .s:fg_keyword     .s:bg_none        .s:fmt_none
 " selection
 "
 " Conceal, Cursor, CursorIM
-exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_undr
-exe "hi! CursorLineNr"    .s:fg_accent      .s:bg_line        .s:fmt_none
-exe "hi! LineNr"          .s:fg_guide       .s:bg_none        .s:fmt_none
-exe "hi! Directory"       .s:fg_fg_idle     .s:bg_none        .s:fmt_none
-exe "hi! DiffAdd"         .s:fg_string      .s:bg_panel       .s:fmt_none
-exe "hi! DiffChange"      .s:fg_tag         .s:bg_panel       .s:fmt_none
-exe "hi! DiffText"        .s:fg_fg          .s:bg_panel       .s:fmt_none
-exe "hi! ErrorMsg"        .s:fg_fg          .s:bg_error       .s:fmt_stnd
-exe "hi! VertSplit"       .s:fg_bg          .s:bg_none        .s:fmt_none
-exe "hi! Folded"          .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
-exe "hi! FoldColumn"      .s:fg_none        .s:bg_panel       .s:fmt_none
-exe "hi! SignColumn"      .s:fg_none        .s:bg_panel       .s:fmt_none
+exe "hi! CursorColumn"        .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLine"          .s:fg_none        .s:bg_line        .s:fmt_undr
+exe "hi! CursorLineNr"        .s:fg_accent      .s:bg_line        .s:fmt_none
+exe "hi! LineNr"              .s:fg_guide       .s:bg_none        .s:fmt_none
+exe "hi! Directory"           .s:fg_fg_idle     .s:bg_none        .s:fmt_none
+exe "hi! DiffAdd"             .s:fg_string      .s:bg_panel       .s:fmt_none
+exe "hi! DiffChange"          .s:fg_tag         .s:bg_panel       .s:fmt_none
+exe "hi! DiffText"            .s:fg_fg          .s:bg_panel       .s:fmt_none
+exe "hi! ErrorMsg"            .s:fg_fg          .s:bg_error       .s:fmt_stnd
+exe "hi! VertSplit"           .s:fg_bg          .s:bg_none        .s:fmt_none
+exe "hi! Folded"              .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
+exe "hi! FoldColumn"          .s:fg_none        .s:bg_panel       .s:fmt_none
+exe "hi! SignColumn"          .s:fg_none        .s:bg_panel       .s:fmt_none
 "   Incsearch"
-exe "hi! MatchParen"      .s:fg_fg          .s:bg_bg          .s:fmt_undr
-exe "hi! ModeMsg"         .s:fg_string      .s:bg_none        .s:fmt_none
-exe "hi! MoreMsg"         .s:fg_string      .s:bg_none        .s:fmt_none
-exe "hi! NonText"         .s:fg_guide       .s:bg_none        .s:fmt_none
-exe "hi! Pmenu"           .s:fg_fg_idle     .s:bg_guide       .s:fmt_none
-exe "hi! PmenuSel"        .s:fg_fg          .s:bg_guide       .s:fmt_revr
+exe "hi! MatchParen"          .s:fg_fg          .s:bg_bg          .s:fmt_undr
+exe "hi! ModeMsg"             .s:fg_string      .s:bg_none        .s:fmt_none
+exe "hi! MoreMsg"             .s:fg_string      .s:bg_none        .s:fmt_none
+exe "hi! NonText"             .s:fg_guide       .s:bg_none        .s:fmt_none
+exe "hi! Pmenu"               .s:fg_fg_idle     .s:bg_guide       .s:fmt_none
+exe "hi! PmenuSel"            .s:fg_fg          .s:bg_guide       .s:fmt_revr
 "   PmenuSbar"
 "   PmenuThumb"
-exe "hi! Question"        .s:fg_string      .s:bg_none        .s:fmt_none
-exe "hi! Search"          .s:fg_bg          .s:bg_constant    .s:fmt_none
-exe "hi! SpecialKey"      .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! SpellCap"        .s:fg_tag         .s:bg_none        .s:fmt_undr
-exe "hi! SpellLocal"      .s:fg_keyword     .s:bg_none        .s:fmt_undr
-exe "hi! SpellBad"        .s:fg_error       .s:bg_none        .s:fmt_undr
-exe "hi! SpellRare"       .s:fg_regexp      .s:bg_none        .s:fmt_undr
-exe "hi! StatusLine"      .s:fg_fg          .s:bg_panel       .s:fmt_none
-exe "hi! StatusLineNC"    .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
-exe "hi! WildMenu"        .s:fg_bg          .s:bg_markup      .s:fmt_none
-exe "hi! TabLine"         .s:fg_fg          .s:bg_panel       .s:fmt_revr
+exe "hi! Question"            .s:fg_string      .s:bg_none        .s:fmt_none
+exe "hi! Search"              .s:fg_bg          .s:bg_constant    .s:fmt_none
+exe "hi! SpecialKey"          .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! SpellCap"            .s:fg_tag         .s:bg_none        .s:fmt_undr
+exe "hi! SpellLocal"          .s:fg_keyword     .s:bg_none        .s:fmt_undr
+exe "hi! SpellBad"            .s:fg_error       .s:bg_none        .s:fmt_undr
+exe "hi! SpellRare"           .s:fg_regexp      .s:bg_none        .s:fmt_undr
+exe "hi! StatusLine"          .s:fg_fg          .s:bg_panel       .s:fmt_none
+exe "hi! StatusLineNC"        .s:fg_fg_idle     .s:bg_panel       .s:fmt_none
+exe "hi! WildMenu"            .s:fg_bg          .s:bg_markup      .s:fmt_none
+exe "hi! TabLine"             .s:fg_fg          .s:bg_panel       .s:fmt_revr
 "   TabLineFill"
 "   TabLineSel"
-exe "hi! Title"           .s:fg_keyword     .s:bg_none        .s:fmt_none
-exe "hi! Visual"          .s:fg_none        .s:bg_selection   .s:fmt_none
+exe "hi! Title"               .s:fg_keyword     .s:bg_none        .s:fmt_none
+exe "hi! Visual"              .s:fg_none        .s:bg_selection   .s:fmt_none
 "   VisualNos"
-exe "hi! WarningMsg"      .s:fg_error       .s:bg_none        .s:fmt_none
+exe "hi! WarningMsg"          .s:fg_error       .s:bg_none        .s:fmt_none
 "   Coc
-exe "hi! CocInfoFloat"    .s:fg_info        .s:bg_guide       .s:fmt_none
-exe "hi! CocWarningFloat" .s:fg_markup      .s:bg_guide       .s:fmt_none
-exe "hi! CocErrorFloat"   .s:fg_special     .s:bg_guide       .s:fmt_none
-exe "hi! CocWarningHighlight" .s:fg_bg      .s:bg_accent      .s:fmt_undr
-exe "hi! CocErrorHighlight" .s:fg_bg        .s:bg_error       .s:fmt_undr
+exe "hi! CocInfoSign"         .s:fg_info        .s:bg_none        .s:fmt_none
+exe "hi! CocWarningSign"      .s:fg_accent      .s:bg_none        .s:fmt_none
+exe "hi! CocErrorSign"        .s:fg_error       .s:bg_none        .s:fmt_none
+exe "hi! CocInfoFloat"        .s:fg_info        .s:bg_guide       .s:fmt_none
+exe "hi! CocWarningFloat"     .s:fg_markup      .s:bg_guide       .s:fmt_none
+exe "hi! CocErrorFloat"       .s:fg_special     .s:bg_guide       .s:fmt_none
+exe "hi! CocInfoHighlight"    .s:fg_info        .s:bg_none        .s:fmt_revr
+exe "hi! CocWarningHighlight" .s:fg_accent      .s:bg_none        .s:fmt_revr
+exe "hi! CocErrorHighlight"   .s:fg_error       .s:bg_none        .s:fmt_revr
 " }}}
